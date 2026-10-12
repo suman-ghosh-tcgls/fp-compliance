@@ -1,0 +1,28 @@
+{
+  "description": "Registry of primitives (named measurements) a rule may reference. 'implemented' marks those the prototype can already compute from PDF plans; the rest need new extraction or data.",
+  "primitives": {
+    "area":                 {"applies_to": ["room", "ventilation_shaft", "interior_chowk"], "unit": "m2", "implemented": true},
+    "dims":                 {"applies_to": ["parking_bay", "interior_chowk", "exterior_chowk"], "unit": "m", "returns": "[short side, long side]", "implemented": true},
+    "min_dim":              {"applies_to": ["ventilation_shaft"], "unit": "m", "implemented": false},
+    "clear_width":          {"applies_to": ["drive_aisle", "ramp", "accessible_ramp", "exit_door", "room"], "unit": "m", "args": {"with_leaf_open": "boolean (exit_door: width of landing with leaf open)"}, "implemented": true},
+    "opening_area":         {"applies_to": ["room"], "unit": "m2", "args": {"to": "list of: exterior, open_deck"}, "implemented": false, "note": "widths known; needs opening heights"},
+    "max_distance_to_opening": {"applies_to": ["room"], "unit": "m", "args": {"to": "list of: exterior, open_deck"}, "implemented": true},
+    "slope":                {"applies_to": ["ramp", "accessible_ramp"], "unit": "ratio", "implemented": false, "note": "needs levels/section"},
+    "length":               {"applies_to": ["accessible_ramp"], "unit": "m", "args": {"of": "run"}, "implemented": false},
+    "count":                {"applies_to": ["building"], "unit": "count", "args": {"of": "element type, e.g. ramp, lift"}, "implemented": false},
+    "building_height":      {"applies_to": ["building", "ventilation_shaft", "exterior_chowk", "ramp"], "unit": "m", "implemented": false, "note": "from section/elevation"},
+    "abutting_wall_height": {"applies_to": ["interior_chowk", "exterior_chowk"], "unit": "m", "implemented": false},
+    "plot_area":            {"applies_to": ["building", "ramp"], "unit": "m2", "implemented": false},
+    "tread":                {"applies_to": ["stair_flight"], "unit": "m", "implemented": false},
+    "riser":                {"applies_to": ["stair_flight"], "unit": "m", "implemented": false},
+    "risers_in_flight":     {"applies_to": ["stair_flight"], "unit": "count", "implemented": false},
+    "swing_direction":      {"applies_to": ["exit_door"], "unit": "none", "implemented": false},
+    "exit_direction":       {"applies_to": ["exit_door"], "unit": "none", "implemented": false},
+    "landing_depth":        {"applies_to": ["exit_door"], "unit": "m", "implemented": false},
+    "door_width":           {"applies_to": ["exit_door"], "unit": "m", "implemented": true},
+    "projection_depth":     {"applies_to": ["projection"], "unit": "m", "args": {"beyond": "required_marginal_envelope"}, "implemented": false},
+    "handrail_height":      {"applies_to": ["accessible_ramp"], "unit": "m", "implemented": false},
+    "occupancy":            {"applies_to": ["building", "stair_flight"], "unit": "none", "implemented": false, "note": "category, used by by_category values"},
+    "vehicle_type":         {"applies_to": ["parking_bay", "drive_aisle"], "unit": "none", "implemented": true, "note": "category: car / two_wheeler"}
+  }
+}

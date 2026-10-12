@@ -1,0 +1,1988 @@
+{
+ "source": "2026.09.23_TOWER Q - PARKING FLOOR PLANS-Model.pdf (P1 at +554.10)",
+ "scale": {
+  "m_per_pt": 0.17037037037037037,
+  "basis": "RERA AREA dimension 16.2 pt labelled 2.76 m (lift lobby); cross-check: lift doors 0.89-0.90 m"
+ },
+ "coordinate_system": {
+  "units": "m",
+  "orientation": "as displayed",
+  "origin": "display point (205,475) pt",
+  "y_axis": "up"
+ },
+ "bays": [
+  {
+   "id": "B0",
+   "type": "standard",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "no aisle frontage detected",
+   "gap_to_aisle_m": 0.86,
+   "polygon": [
+    [
+     24.79,
+     26.19
+    ],
+    [
+     24.79,
+     31.18
+    ],
+    [
+     22.29,
+     31.18
+    ],
+    [
+     22.29,
+     26.19
+    ],
+    [
+     24.79,
+     26.19
+    ]
+   ]
+  },
+  {
+   "id": "B1",
+   "type": "standard",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     24.22,
+     43.06
+    ],
+    [
+     21.73,
+     43.06
+    ],
+    [
+     21.73,
+     38.07
+    ],
+    [
+     24.22,
+     38.07
+    ],
+    [
+     24.22,
+     43.06
+    ]
+   ]
+  },
+  {
+   "id": "B2",
+   "type": "tandem",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     19.8,
+     26.19
+    ],
+    [
+     22.29,
+     26.19
+    ],
+    [
+     22.29,
+     31.18
+    ],
+    [
+     19.8,
+     31.18
+    ],
+    [
+     19.8,
+     26.19
+    ]
+   ]
+  },
+  {
+   "id": "B3",
+   "type": "tandem",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "via tandem partner",
+   "gap_to_aisle_m": 0.1,
+   "polygon": [
+    [
+     19.8,
+     31.18
+    ],
+    [
+     22.29,
+     31.18
+    ],
+    [
+     22.29,
+     36.17
+    ],
+    [
+     19.8,
+     36.17
+    ],
+    [
+     19.8,
+     31.18
+    ]
+   ]
+  },
+  {
+   "id": "B4",
+   "type": "standard",
+   "width_m": 2.5,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     35.4,
+     25.32
+    ],
+    [
+     37.9,
+     25.32
+    ],
+    [
+     37.9,
+     30.32
+    ],
+    [
+     35.4,
+     30.32
+    ],
+    [
+     35.4,
+     25.32
+    ]
+   ]
+  },
+  {
+   "id": "B5",
+   "type": "standard",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     38.93,
+     25.32
+    ],
+    [
+     41.43,
+     25.32
+    ],
+    [
+     41.43,
+     30.32
+    ],
+    [
+     38.93,
+     30.32
+    ],
+    [
+     38.93,
+     25.32
+    ]
+   ]
+  },
+  {
+   "id": "B6",
+   "type": "standard",
+   "width_m": 2.5,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     41.43,
+     25.32
+    ],
+    [
+     43.93,
+     25.32
+    ],
+    [
+     43.93,
+     30.32
+    ],
+    [
+     41.43,
+     30.32
+    ],
+    [
+     41.43,
+     25.32
+    ]
+   ]
+  },
+  {
+   "id": "B7",
+   "type": "standard",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     43.93,
+     25.32
+    ],
+    [
+     46.42,
+     25.32
+    ],
+    [
+     46.42,
+     30.32
+    ],
+    [
+     43.93,
+     30.32
+    ],
+    [
+     43.93,
+     25.32
+    ]
+   ]
+  },
+  {
+   "id": "B8",
+   "type": "standard",
+   "width_m": 2.5,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     22.18,
+     49.05
+    ],
+    [
+     24.68,
+     49.05
+    ],
+    [
+     24.68,
+     54.04
+    ],
+    [
+     22.18,
+     54.04
+    ],
+    [
+     22.18,
+     49.05
+    ]
+   ]
+  },
+  {
+   "id": "B9",
+   "type": "standard",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     24.68,
+     49.05
+    ],
+    [
+     27.18,
+     49.05
+    ],
+    [
+     27.18,
+     54.04
+    ],
+    [
+     24.68,
+     54.04
+    ],
+    [
+     24.68,
+     49.05
+    ]
+   ]
+  },
+  {
+   "id": "B10",
+   "type": "standard",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     27.18,
+     49.05
+    ],
+    [
+     29.67,
+     49.05
+    ],
+    [
+     29.67,
+     54.04
+    ],
+    [
+     27.18,
+     54.04
+    ],
+    [
+     27.18,
+     49.05
+    ]
+   ]
+  },
+  {
+   "id": "B11",
+   "type": "standard",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     35.32,
+     49.05
+    ],
+    [
+     37.82,
+     49.05
+    ],
+    [
+     37.82,
+     54.04
+    ],
+    [
+     35.32,
+     54.04
+    ],
+    [
+     35.32,
+     49.05
+    ]
+   ]
+  },
+  {
+   "id": "B12",
+   "type": "standard",
+   "width_m": 2.5,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     37.82,
+     49.05
+    ],
+    [
+     40.32,
+     49.05
+    ],
+    [
+     40.32,
+     54.04
+    ],
+    [
+     37.82,
+     54.04
+    ],
+    [
+     37.82,
+     49.05
+    ]
+   ]
+  },
+  {
+   "id": "B13",
+   "type": "tandem",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     52.67,
+     25.32
+    ],
+    [
+     55.16,
+     25.32
+    ],
+    [
+     55.16,
+     30.32
+    ],
+    [
+     52.67,
+     30.32
+    ],
+    [
+     52.67,
+     25.32
+    ]
+   ]
+  },
+  {
+   "id": "B14",
+   "type": "tandem",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "via tandem partner",
+   "gap_to_aisle_m": 4.99,
+   "polygon": [
+    [
+     52.67,
+     30.32
+    ],
+    [
+     55.16,
+     30.32
+    ],
+    [
+     55.16,
+     35.31
+    ],
+    [
+     52.67,
+     35.31
+    ],
+    [
+     52.67,
+     30.32
+    ]
+   ]
+  },
+  {
+   "id": "B15",
+   "type": "tandem",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     49.91,
+     25.32
+    ],
+    [
+     52.4,
+     25.32
+    ],
+    [
+     52.4,
+     30.32
+    ],
+    [
+     49.91,
+     30.32
+    ],
+    [
+     49.91,
+     25.32
+    ]
+   ]
+  },
+  {
+   "id": "B16",
+   "type": "tandem",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "via tandem partner",
+   "gap_to_aisle_m": 4.99,
+   "polygon": [
+    [
+     49.91,
+     30.32
+    ],
+    [
+     52.4,
+     30.32
+    ],
+    [
+     52.4,
+     35.31
+    ],
+    [
+     49.91,
+     35.31
+    ],
+    [
+     49.91,
+     30.32
+    ]
+   ]
+  },
+  {
+   "id": "B17",
+   "type": "standard",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "no aisle frontage detected",
+   "gap_to_aisle_m": 1.16,
+   "polygon": [
+    [
+     47.03,
+     41.9
+    ],
+    [
+     47.03,
+     36.91
+    ],
+    [
+     49.52,
+     36.91
+    ],
+    [
+     49.52,
+     41.9
+    ],
+    [
+     47.03,
+     41.9
+    ]
+   ]
+  },
+  {
+   "id": "B18",
+   "type": "standard",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "no aisle frontage detected",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     41.31,
+     51.54
+    ],
+    [
+     41.31,
+     49.05
+    ],
+    [
+     46.31,
+     49.05
+    ],
+    [
+     46.31,
+     51.54
+    ],
+    [
+     41.31,
+     51.54
+    ]
+   ]
+  },
+  {
+   "id": "B19",
+   "type": "standard",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     30.13,
+     49.05
+    ],
+    [
+     32.63,
+     49.05
+    ],
+    [
+     32.63,
+     54.04
+    ],
+    [
+     30.13,
+     54.04
+    ],
+    [
+     30.13,
+     49.05
+    ]
+   ]
+  },
+  {
+   "id": "B20",
+   "type": "standard",
+   "width_m": 2.5,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     32.63,
+     49.05
+    ],
+    [
+     35.13,
+     49.05
+    ],
+    [
+     35.13,
+     54.04
+    ],
+    [
+     32.63,
+     54.04
+    ],
+    [
+     32.63,
+     49.05
+    ]
+   ]
+  },
+  {
+   "id": "B21",
+   "type": "standard",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "no aisle frontage detected",
+   "gap_to_aisle_m": 0.52,
+   "polygon": [
+    [
+     16.51,
+     49.57
+    ],
+    [
+     19.0,
+     49.57
+    ],
+    [
+     19.0,
+     54.56
+    ],
+    [
+     16.51,
+     54.56
+    ],
+    [
+     16.51,
+     49.57
+    ]
+   ]
+  },
+  {
+   "id": "B22",
+   "type": "standard",
+   "width_m": 2.5,
+   "length_m": 4.99,
+   "access": "no aisle frontage detected",
+   "gap_to_aisle_m": 0.52,
+   "polygon": [
+    [
+     19.0,
+     49.57
+    ],
+    [
+     21.5,
+     49.57
+    ],
+    [
+     21.5,
+     54.56
+    ],
+    [
+     19.0,
+     54.56
+    ],
+    [
+     19.0,
+     49.57
+    ]
+   ]
+  },
+  {
+   "id": "B23",
+   "type": "standard",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     13.7,
+     21.94
+    ],
+    [
+     13.7,
+     24.43
+    ],
+    [
+     8.71,
+     24.43
+    ],
+    [
+     8.71,
+     21.94
+    ],
+    [
+     13.7,
+     21.94
+    ]
+   ]
+  },
+  {
+   "id": "B24",
+   "type": "standard",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     13.7,
+     24.96
+    ],
+    [
+     13.7,
+     27.46
+    ],
+    [
+     8.71,
+     27.46
+    ],
+    [
+     8.71,
+     24.96
+    ],
+    [
+     13.7,
+     24.96
+    ]
+   ]
+  },
+  {
+   "id": "B25",
+   "type": "standard",
+   "width_m": 2.5,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     13.7,
+     27.46
+    ],
+    [
+     13.7,
+     29.95
+    ],
+    [
+     8.71,
+     29.95
+    ],
+    [
+     8.71,
+     27.46
+    ],
+    [
+     13.7,
+     27.46
+    ]
+   ]
+  },
+  {
+   "id": "B26",
+   "type": "standard",
+   "width_m": 2.5,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     13.7,
+     30.66
+    ],
+    [
+     13.7,
+     33.16
+    ],
+    [
+     8.71,
+     33.16
+    ],
+    [
+     8.71,
+     30.66
+    ],
+    [
+     13.7,
+     30.66
+    ]
+   ]
+  },
+  {
+   "id": "B27",
+   "type": "standard",
+   "width_m": 2.5,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     13.7,
+     44.58
+    ],
+    [
+     13.7,
+     47.08
+    ],
+    [
+     8.71,
+     47.08
+    ],
+    [
+     8.71,
+     44.58
+    ],
+    [
+     13.7,
+     44.58
+    ]
+   ]
+  },
+  {
+   "id": "B28",
+   "type": "standard",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     13.7,
+     47.08
+    ],
+    [
+     13.7,
+     49.57
+    ],
+    [
+     8.71,
+     49.57
+    ],
+    [
+     8.71,
+     47.08
+    ],
+    [
+     13.7,
+     47.08
+    ]
+   ]
+  },
+  {
+   "id": "B29",
+   "type": "standard",
+   "width_m": 2.5,
+   "length_m": 4.99,
+   "access": "no aisle frontage detected",
+   "gap_to_aisle_m": 0.52,
+   "polygon": [
+    [
+     14.01,
+     49.57
+    ],
+    [
+     16.51,
+     49.57
+    ],
+    [
+     16.51,
+     54.56
+    ],
+    [
+     14.01,
+     54.56
+    ],
+    [
+     14.01,
+     49.57
+    ]
+   ]
+  },
+  {
+   "id": "B30",
+   "type": "standard",
+   "width_m": 2.5,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     13.7,
+     19.44
+    ],
+    [
+     13.7,
+     21.94
+    ],
+    [
+     8.71,
+     21.94
+    ],
+    [
+     8.71,
+     19.44
+    ],
+    [
+     13.7,
+     19.44
+    ]
+   ]
+  },
+  {
+   "id": "B31",
+   "type": "standard",
+   "width_m": 2.5,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     30.57,
+     43.06
+    ],
+    [
+     28.07,
+     43.06
+    ],
+    [
+     28.07,
+     38.07
+    ],
+    [
+     30.57,
+     38.07
+    ],
+    [
+     30.57,
+     43.06
+    ]
+   ]
+  },
+  {
+   "id": "B32",
+   "type": "standard",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     28.07,
+     43.06
+    ],
+    [
+     25.58,
+     43.06
+    ],
+    [
+     25.58,
+     38.07
+    ],
+    [
+     28.07,
+     38.07
+    ],
+    [
+     28.07,
+     43.06
+    ]
+   ]
+  },
+  {
+   "id": "B33",
+   "type": "standard",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     33.07,
+     43.06
+    ],
+    [
+     30.57,
+     43.06
+    ],
+    [
+     30.57,
+     38.07
+    ],
+    [
+     33.07,
+     38.07
+    ],
+    [
+     33.07,
+     43.06
+    ]
+   ]
+  },
+  {
+   "id": "B34",
+   "type": "tandem",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     47.42,
+     25.32
+    ],
+    [
+     49.91,
+     25.32
+    ],
+    [
+     49.91,
+     30.32
+    ],
+    [
+     47.42,
+     30.32
+    ],
+    [
+     47.42,
+     25.32
+    ]
+   ]
+  },
+  {
+   "id": "B35",
+   "type": "tandem",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "via tandem partner",
+   "gap_to_aisle_m": 4.99,
+   "polygon": [
+    [
+     47.42,
+     30.32
+    ],
+    [
+     49.91,
+     30.32
+    ],
+    [
+     49.91,
+     35.31
+    ],
+    [
+     47.42,
+     35.31
+    ],
+    [
+     47.42,
+     30.32
+    ]
+   ]
+  },
+  {
+   "id": "B36",
+   "type": "standard",
+   "width_m": 2.5,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     36.55,
+     43.06
+    ],
+    [
+     34.05,
+     43.06
+    ],
+    [
+     34.05,
+     38.07
+    ],
+    [
+     36.55,
+     38.07
+    ],
+    [
+     36.55,
+     43.06
+    ]
+   ]
+  },
+  {
+   "id": "B37",
+   "type": "standard",
+   "width_m": 2.5,
+   "length_m": 4.99,
+   "access": "no aisle frontage detected",
+   "gap_to_aisle_m": 1.16,
+   "polygon": [
+    [
+     49.52,
+     41.9
+    ],
+    [
+     49.52,
+     36.91
+    ],
+    [
+     52.02,
+     36.91
+    ],
+    [
+     52.02,
+     41.9
+    ],
+    [
+     49.52,
+     41.9
+    ]
+   ]
+  },
+  {
+   "id": "B38",
+   "type": "tandem",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     44.38,
+     43.06
+    ],
+    [
+     44.38,
+     38.07
+    ],
+    [
+     46.87,
+     38.07
+    ],
+    [
+     46.87,
+     43.06
+    ],
+    [
+     44.38,
+     43.06
+    ]
+   ]
+  },
+  {
+   "id": "B39",
+   "type": "tandem",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "via tandem partner",
+   "gap_to_aisle_m": 4.99,
+   "polygon": [
+    [
+     44.38,
+     38.07
+    ],
+    [
+     44.38,
+     33.07
+    ],
+    [
+     46.87,
+     33.07
+    ],
+    [
+     46.87,
+     38.07
+    ],
+    [
+     44.38,
+     38.07
+    ]
+   ]
+  },
+  {
+   "id": "B40",
+   "type": "tandem",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     41.88,
+     43.06
+    ],
+    [
+     41.88,
+     38.07
+    ],
+    [
+     44.38,
+     38.07
+    ],
+    [
+     44.38,
+     43.06
+    ],
+    [
+     41.88,
+     43.06
+    ]
+   ]
+  },
+  {
+   "id": "B41",
+   "type": "tandem",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "via tandem partner",
+   "gap_to_aisle_m": 4.99,
+   "polygon": [
+    [
+     41.88,
+     38.07
+    ],
+    [
+     41.88,
+     33.07
+    ],
+    [
+     44.38,
+     33.07
+    ],
+    [
+     44.38,
+     38.07
+    ],
+    [
+     41.88,
+     38.07
+    ]
+   ]
+  },
+  {
+   "id": "B42",
+   "type": "tandem",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     39.39,
+     43.06
+    ],
+    [
+     39.39,
+     38.07
+    ],
+    [
+     41.88,
+     38.07
+    ],
+    [
+     41.88,
+     43.06
+    ],
+    [
+     39.39,
+     43.06
+    ]
+   ]
+  },
+  {
+   "id": "B43",
+   "type": "tandem",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "via tandem partner",
+   "gap_to_aisle_m": 4.99,
+   "polygon": [
+    [
+     39.39,
+     38.07
+    ],
+    [
+     39.39,
+     33.07
+    ],
+    [
+     41.88,
+     33.07
+    ],
+    [
+     41.88,
+     38.07
+    ],
+    [
+     39.39,
+     38.07
+    ]
+   ]
+  },
+  {
+   "id": "B44",
+   "type": "tandem",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     36.56,
+     43.06
+    ],
+    [
+     36.56,
+     38.07
+    ],
+    [
+     39.05,
+     38.07
+    ],
+    [
+     39.05,
+     43.06
+    ],
+    [
+     36.56,
+     43.06
+    ]
+   ]
+  },
+  {
+   "id": "B45",
+   "type": "tandem",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "via tandem partner",
+   "gap_to_aisle_m": 4.99,
+   "polygon": [
+    [
+     36.56,
+     38.07
+    ],
+    [
+     36.56,
+     33.07
+    ],
+    [
+     39.05,
+     33.07
+    ],
+    [
+     39.05,
+     38.07
+    ],
+    [
+     36.56,
+     38.07
+    ]
+   ]
+  },
+  {
+   "id": "B46",
+   "type": "standard",
+   "width_m": 2.5,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     46.82,
+     19.33
+    ],
+    [
+     44.32,
+     19.33
+    ],
+    [
+     44.32,
+     14.34
+    ],
+    [
+     46.82,
+     14.34
+    ],
+    [
+     46.82,
+     19.33
+    ]
+   ]
+  },
+  {
+   "id": "B47",
+   "type": "standard",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     49.51,
+     19.33
+    ],
+    [
+     47.02,
+     19.33
+    ],
+    [
+     47.02,
+     14.34
+    ],
+    [
+     49.51,
+     14.34
+    ],
+    [
+     49.51,
+     19.33
+    ]
+   ]
+  },
+  {
+   "id": "B48",
+   "type": "standard",
+   "width_m": 2.5,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     52.01,
+     19.33
+    ],
+    [
+     49.51,
+     19.33
+    ],
+    [
+     49.51,
+     14.34
+    ],
+    [
+     52.01,
+     14.34
+    ],
+    [
+     52.01,
+     19.33
+    ]
+   ]
+  },
+  {
+   "id": "B49",
+   "type": "standard",
+   "width_m": 2.5,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     55.19,
+     19.33
+    ],
+    [
+     52.69,
+     19.33
+    ],
+    [
+     52.69,
+     14.34
+    ],
+    [
+     55.19,
+     14.34
+    ],
+    [
+     55.19,
+     19.33
+    ]
+   ]
+  },
+  {
+   "id": "B50",
+   "type": "standard",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     57.69,
+     19.33
+    ],
+    [
+     55.19,
+     19.33
+    ],
+    [
+     55.19,
+     14.34
+    ],
+    [
+     57.69,
+     14.34
+    ],
+    [
+     57.69,
+     19.33
+    ]
+   ]
+  },
+  {
+   "id": "B51",
+   "type": "standard",
+   "width_m": 2.5,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     41.83,
+     19.33
+    ],
+    [
+     39.33,
+     19.33
+    ],
+    [
+     39.33,
+     14.34
+    ],
+    [
+     41.83,
+     14.34
+    ],
+    [
+     41.83,
+     19.33
+    ]
+   ]
+  },
+  {
+   "id": "B52",
+   "type": "standard",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     39.1,
+     19.33
+    ],
+    [
+     36.6,
+     19.33
+    ],
+    [
+     36.6,
+     14.34
+    ],
+    [
+     39.1,
+     14.34
+    ],
+    [
+     39.1,
+     19.33
+    ]
+   ]
+  },
+  {
+   "id": "B53",
+   "type": "standard",
+   "width_m": 2.5,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     36.61,
+     19.33
+    ],
+    [
+     34.11,
+     19.33
+    ],
+    [
+     34.11,
+     14.34
+    ],
+    [
+     36.61,
+     14.34
+    ],
+    [
+     36.61,
+     19.33
+    ]
+   ]
+  },
+  {
+   "id": "B54",
+   "type": "standard",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     34.11,
+     19.33
+    ],
+    [
+     31.62,
+     19.33
+    ],
+    [
+     31.62,
+     14.34
+    ],
+    [
+     34.11,
+     14.34
+    ],
+    [
+     34.11,
+     19.33
+    ]
+   ]
+  },
+  {
+   "id": "B55",
+   "type": "standard",
+   "width_m": 2.5,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     31.38,
+     19.33
+    ],
+    [
+     28.88,
+     19.33
+    ],
+    [
+     28.88,
+     14.34
+    ],
+    [
+     31.38,
+     14.34
+    ],
+    [
+     31.38,
+     19.33
+    ]
+   ]
+  },
+  {
+   "id": "B56",
+   "type": "standard",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     28.88,
+     19.33
+    ],
+    [
+     26.39,
+     19.33
+    ],
+    [
+     26.39,
+     14.34
+    ],
+    [
+     28.88,
+     14.34
+    ],
+    [
+     28.88,
+     19.33
+    ]
+   ]
+  },
+  {
+   "id": "B57",
+   "type": "standard",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     26.39,
+     19.33
+    ],
+    [
+     23.89,
+     19.33
+    ],
+    [
+     23.89,
+     14.34
+    ],
+    [
+     26.39,
+     14.34
+    ],
+    [
+     26.39,
+     19.33
+    ]
+   ]
+  },
+  {
+   "id": "B58",
+   "type": "standard",
+   "width_m": 2.5,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     21.68,
+     19.33
+    ],
+    [
+     19.18,
+     19.33
+    ],
+    [
+     19.18,
+     14.34
+    ],
+    [
+     21.68,
+     14.34
+    ],
+    [
+     21.68,
+     19.33
+    ]
+   ]
+  },
+  {
+   "id": "B59",
+   "type": "standard",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     19.18,
+     19.33
+    ],
+    [
+     16.68,
+     19.33
+    ],
+    [
+     16.68,
+     14.34
+    ],
+    [
+     19.18,
+     14.34
+    ],
+    [
+     19.18,
+     19.33
+    ]
+   ]
+  },
+  {
+   "id": "B60",
+   "type": "standard",
+   "width_m": 2.5,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     16.68,
+     19.33
+    ],
+    [
+     14.19,
+     19.33
+    ],
+    [
+     14.19,
+     14.34
+    ],
+    [
+     16.68,
+     14.34
+    ],
+    [
+     16.68,
+     19.33
+    ]
+   ]
+  },
+  {
+   "id": "B61",
+   "type": "standard",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     13.7,
+     42.08
+    ],
+    [
+     13.7,
+     44.58
+    ],
+    [
+     8.71,
+     44.58
+    ],
+    [
+     8.71,
+     42.08
+    ],
+    [
+     13.7,
+     42.08
+    ]
+   ]
+  },
+  {
+   "id": "B62",
+   "type": "standard",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "aisle",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     44.32,
+     19.33
+    ],
+    [
+     41.83,
+     19.33
+    ],
+    [
+     41.83,
+     14.34
+    ],
+    [
+     44.32,
+     14.34
+    ],
+    [
+     44.32,
+     19.33
+    ]
+   ]
+  },
+  {
+   "id": "B63",
+   "type": "standard",
+   "width_m": 2.49,
+   "length_m": 4.99,
+   "access": "no aisle frontage detected",
+   "gap_to_aisle_m": 0.0,
+   "polygon": [
+    [
+     34.42,
+     25.32
+    ],
+    [
+     34.42,
+     27.82
+    ],
+    [
+     29.43,
+     27.82
+    ],
+    [
+     29.43,
+     25.32
+    ],
+    [
+     34.42,
+     25.32
+    ]
+   ]
+  }
+ ],
+ "aisle": {
+  "clear_area_m2": 632.2,
+  "typical_clear_width_m": 6.02,
+  "min_clear_width_m": 3.58,
+  "narrowings": [
+   {
+    "width_m": 3.58,
+    "length_m": 2.3,
+    "at": [
+     47.94,
+     44.85
+    ]
+   }
+  ]
+ },
+ "checks": [
+  {
+   "rule": "UDCPR-8.1.1 car bay >= 2.5 x 5.0 m",
+   "item": "64 bays",
+   "status": "PASS (at limit)",
+   "detail": "all bays 2.49-2.50 x 4.99-4.99 m; scale uncertainty about \u00b10.2%"
+  },
+  {
+   "rule": "UDCPR-8.1.1 drive width >= 3.0 m",
+   "item": "Drive aisle",
+   "status": "PASS",
+   "detail": "typical clear width 6.02 m (two-way); narrowest 3.58 m at the NE taper"
+  },
+  {
+   "rule": "UDCPR-8.1.1 2W bay >= 1.0 x 2.0 m",
+   "item": "2W spaces",
+   "status": "CANNOT DETERMINE",
+   "detail": "2W parking drawn as labelled zones ('SPACE FOR TWO WHEELER PARKING') without individual bays"
+  },
+  {
+   "rule": "UDCPR-9.12.2 ramp width >= 3.0 m",
+   "item": "West exit ramp",
+   "status": "PASS",
+   "detail": "hatched ramp strip 3.63 m between edges"
+  },
+  {
+   "rule": "UDCPR-9.12.2 ramp slope <= 1:8",
+   "item": "Ramps",
+   "status": "PASS (annotation only)",
+   "detail": "annotated 1:10 (exit) and 1:12 (two south ramps); geometric slope not verifiable: south ramps run off this sheet and level tags need the section"
+  },
+  {
+   "rule": "UDCPR-9.12.2 number of ramps",
+   "item": "Ramps",
+   "status": "CANNOT DETERMINE",
+   "detail": "needs all parking levels + plot area for the <=1000/<=2000 sq.m exceptions"
+  }
+ ]
+}

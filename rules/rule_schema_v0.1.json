@@ -1,0 +1,194 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "rule_schema_v0.1.json",
+  "title": "Building rule set (minimal v0.1)",
+  "description": "Minimal schema covering the 10 UDCPR rules in udcpr_rules_v1.json. Intended to be extended. Primitive names are checked against primitives.json by validate_rules.py, not by this schema.",
+  "type": "object",
+  "required": ["schema_version", "code", "rules"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "0.1"},
+    "code": {
+      "type": "object",
+      "required": ["name"],
+      "additionalProperties": false,
+      "properties": {
+        "name": {"type": "string"},
+        "edition": {"type": "string"},
+        "source_document": {"type": "string"}
+      }
+    },
+    "rules": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/rule"}}
+  },
+
+  "$defs": {
+    "rule": {
+      "type": "object",
+      "required": ["id", "clause", "title", "applies_to", "checks", "status"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"type": "string", "pattern": "^[A-Z]+-[0-9]+(\\.[0-9]+)*$"},
+        "clause": {"type": "string", "description": "Clause reference as printed in the regulation, e.g. 'Reg. 9.20.1'."},
+        "title": {"type": "string"},
+        "source_text": {"type": "string", "description": "Clause text or summary the record was built from."},
+        "status": {"enum": ["draft", "reviewed"], "description": "Only 'reviewed' rules may produce PASS/FAIL in production."},
+        "applies_to": {"$ref": "#/$defs/selector"},
+        "applicability": {"$ref": "#/$defs/condition", "description": "Rule-level condition, e.g. building height > 15 m."},
+        "checks": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/check"}},
+        "exceptions": {"type": "array", "items": {"$ref": "#/$defs/exception"}},
+        "requires_data": {"type": "array", "items": {"type": "string"}, "description": "Drawings or data needed; used to emit CANNOT DETERMINE when absent."},
+        "notes": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+
+    "selector": {
+      "type": "object",
+      "required": ["element"],
+      "additionalProperties": false,
+      "properties": {
+        "element": {"$ref": "#/$defs/element_type"},
+        "kind": {"type": "array", "items": {"type": "string"}, "description": "Sub-kinds, e.g. room kinds bedroom/living/kitchen."},
+        "where": {"$ref": "#/$defs/condition"}
+      }
+    },
+
+    "element_type": {
+      "enum": ["room", "parking_bay", "drive_aisle", "ramp", "ventilation_shaft",
+               "interior_chowk", "exterior_chowk", "building", "exit_door",
+               "stair_flight", "projection", "accessible_ramp"]
+    },
+
+    "expr": {
+      "description": "A named measurement (primitive) evaluated on the selected element, optionally with arguments.",
+      "type": "object",
+      "required": ["primitive"],
+      "additionalProperties": false,
+      "properties": {
+        "primitive": {"type": "string"},
+        "args": {"type": "object"}
+      }
+    },
+
+    "scaled_expr": {
+      "description": "factor x expr, for values like H/7 or 0.10 x floor area.",
+      "type": "object",
+      "required": ["factor", "of"],
+      "additionalProperties": false,
+      "properties": {"factor": {"type": "number"}, "of": {"$ref": "#/$defs/expr"}}
+    },
+
+    "by_category": {
+      "description": "Value that depends on a category, e.g. occupancy or vehicle type.",
+      "type": "object",
+      "required": ["by", "values"],
+      "additionalProperties": false,
+      "properties": {
+        "by": {"type": "string"},
+        "values": {"type": "object", "additionalProperties": {"$ref": "#/$defs/scalar_or_pair"}}
+      }
+    },
+
+    "scalar_or_pair": {
+      "oneOf": [
+        {"type": "number"},
+        {"type": "array", "items": {"type": "number"}, "minItems": 2, "maxItems": 2,
+         "description": "[min short side, min long side] for dims()."}
+      ]
+    },
+
+    "value": {
+      "oneOf": [
+        {"$ref": "#/$defs/scalar_or_pair"},
+        {"$ref": "#/$defs/scaled_expr"},
+        {"$ref": "#/$defs/by_category"}
+      ]
+    },
+
+    "op": {"enum": [">=", "<=", "==", ">", "<"]},
+    "unit": {"enum": ["m", "m2", "ratio", "count", "none"]},
+
+    "condition": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["quantity", "op", "value"],
+          "additionalProperties": false,
+          "properties": {
+            "quantity": {"$ref": "#/$defs/expr"},
+            "op": {"$ref": "#/$defs/op"},
+            "value": {"type": "number"},
+            "unit": {"$ref": "#/$defs/unit"}
+          }
+        },
+        {"type": "object", "required": ["all"], "additionalProperties": false,
+         "properties": {"all": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/condition"}}}},
+        {"type": "object", "required": ["any"], "additionalProperties": false,
+         "properties": {"any": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/condition"}}}}
+      ]
+    },
+
+    "check": {
+      "type": "object",
+      "required": ["id", "pattern"],
+      "properties": {
+        "id": {"type": "string"},
+        "pattern": {"enum": ["threshold", "ratio", "max_distance", "count", "lookup_threshold", "relation"]},
+        "description": {"type": "string"},
+        "when": {"$ref": "#/$defs/condition", "description": "Check-level condition; check is skipped (NOT APPLICABLE) when false."}
+      },
+      "allOf": [
+        {"if": {"properties": {"pattern": {"const": "threshold"}}},
+         "then": {"required": ["quantity", "op", "value", "unit"],
+                  "properties": {"quantity": {"$ref": "#/$defs/expr"}, "op": {"$ref": "#/$defs/op"},
+                                 "value": {"$ref": "#/$defs/value"}, "unit": {"$ref": "#/$defs/unit"}}}},
+        {"if": {"properties": {"pattern": {"const": "ratio"}}},
+         "then": {"required": ["numerator", "denominator", "op", "value"],
+                  "properties": {"numerator": {"$ref": "#/$defs/expr"}, "denominator": {"$ref": "#/$defs/expr"},
+                                 "op": {"$ref": "#/$defs/op"}, "value": {"type": "number"}}}},
+        {"if": {"properties": {"pattern": {"const": "max_distance"}}},
+         "then": {"required": ["quantity", "op", "value", "unit"],
+                  "properties": {"quantity": {"$ref": "#/$defs/expr"}, "op": {"enum": ["<="]},
+                                 "value": {"type": "number"}, "unit": {"const": "m"}}}},
+        {"if": {"properties": {"pattern": {"const": "count"}}},
+         "then": {"required": ["quantity", "op", "value"],
+                  "properties": {"quantity": {"$ref": "#/$defs/expr"}, "op": {"$ref": "#/$defs/op"},
+                                 "value": {"type": "integer"}}}},
+        {"if": {"properties": {"pattern": {"const": "lookup_threshold"}}},
+         "then": {"required": ["key", "table", "quantities"],
+                  "properties": {
+                    "key": {"$ref": "#/$defs/expr"},
+                    "table": {"type": "object", "required": ["name", "rows", "complete"], "additionalProperties": false,
+                              "properties": {
+                                "name": {"type": "string"},
+                                "complete": {"type": "boolean", "description": "false = only some rows transcribed; out-of-range keys give CANNOT DETERMINE."},
+                                "rows": {"type": "array", "minItems": 1, "items": {
+                                  "type": "object", "required": ["key_max", "min"], "additionalProperties": false,
+                                  "properties": {"key_max": {"type": "number"},
+                                                 "min": {"type": "object", "additionalProperties": {"type": "number"}}}}}}},
+                    "quantities": {"type": "object", "additionalProperties": {"$ref": "#/$defs/expr"},
+                                   "description": "Maps each column in rows[].min to the primitive that measures it."}}}},
+        {"if": {"properties": {"pattern": {"const": "relation"}}},
+         "then": {"required": ["subject", "relation", "object"],
+                  "properties": {"subject": {"$ref": "#/$defs/expr"},
+                                 "relation": {"enum": ["equals", "within", "not_intersects"]},
+                                 "object": {"$ref": "#/$defs/expr"}}}}
+      ]
+    },
+
+    "exception": {
+      "type": "object",
+      "required": ["id", "condition", "effect", "text"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"type": "string"},
+        "condition": {"$ref": "#/$defs/condition"},
+        "effect": {"enum": ["skip_rule", "skip_checks", "override_value", "unspecified"],
+                   "description": "'unspecified' = exception known to exist but its effect is not yet encoded; evaluator returns CANNOT DETERMINE when the condition holds."},
+        "checks": {"type": "array", "items": {"type": "string"}, "description": "Check ids affected (skip_checks / override_value)."},
+        "override": {"type": "object", "additionalProperties": {"$ref": "#/$defs/value"},
+                     "description": "check id -> replacement value (override_value)."},
+        "text": {"type": "string"}
+      }
+    }
+  }
+}

@@ -1,0 +1,212 @@
+{
+  "schema_version": "0.1",
+  "code": {
+    "name": "UDCPR (Maharashtra)",
+    "source_document": "UDCPR_10_easy_to_miss_rules.xlsx - summaries, not clause text. Values to be verified against the notified regulation."
+  },
+  "rules": [
+    {
+      "id": "UDCPR-8.1.1",
+      "clause": "Reg. 8.1.1",
+      "title": "Parking bay and drive dimensions",
+      "status": "draft",
+      "applies_to": {"element": "parking_bay"},
+      "checks": [
+        {"id": "bay_dims", "pattern": "threshold",
+         "quantity": {"primitive": "dims"}, "op": ">=", "unit": "m",
+         "value": {"by": "vehicle_type", "values": {"car": [2.5, 5.0], "two_wheeler": [1.0, 2.0]}}}
+      ],
+      "requires_data": ["parking floor plan with individual bays"],
+      "notes": ["Drive width is a separate rule record (UDCPR-8.1.1.1) because it selects a different element."]
+    },
+    {
+      "id": "UDCPR-8.1.1.1",
+      "clause": "Reg. 8.1.1 (drive width)",
+      "title": "Parking drive width",
+      "status": "draft",
+      "applies_to": {"element": "drive_aisle"},
+      "checks": [
+        {"id": "drive_width", "pattern": "threshold",
+         "quantity": {"primitive": "clear_width"}, "op": ">=", "unit": "m",
+         "value": {"by": "vehicle_type", "values": {"car": 3.0, "two_wheeler": 2.0}}}
+      ],
+      "requires_data": ["parking floor plan with drive aisles"]
+    },
+    {
+      "id": "UDCPR-9.12.2",
+      "clause": "Reg. 9.12.2",
+      "title": "Basement / upper-floor parking ramps",
+      "status": "draft",
+      "applies_to": {"element": "ramp"},
+      "checks": [
+        {"id": "ramp_width", "pattern": "threshold", "quantity": {"primitive": "clear_width"}, "op": ">=", "value": 3.0, "unit": "m"},
+        {"id": "ramp_slope", "pattern": "threshold", "quantity": {"primitive": "slope"}, "op": "<=", "value": 0.125, "unit": "ratio"}
+      ],
+      "exceptions": [
+        {"id": "small_plot_1000", "effect": "unspecified",
+         "condition": {"quantity": {"primitive": "plot_area"}, "op": "<=", "value": 1000, "unit": "m2"},
+         "text": "Specific relaxation for plots up to 1000 sq.m. - effect not stated in the summary sheet."},
+        {"id": "small_plot_2000", "effect": "unspecified",
+         "condition": {"quantity": {"primitive": "plot_area"}, "op": "<=", "value": 2000, "unit": "m2"},
+         "text": "Specific relaxation for plots up to 2000 sq.m. - effect not stated in the summary sheet."}
+      ],
+      "requires_data": ["parking plans for all levels", "levels or section", "plot area"],
+      "notes": ["Ramp count is a separate building-level record (UDCPR-9.12.2.1)."]
+    },
+    {
+      "id": "UDCPR-9.12.2.1",
+      "clause": "Reg. 9.12.2 (number of ramps)",
+      "title": "Number of parking ramps",
+      "status": "draft",
+      "applies_to": {"element": "building"},
+      "checks": [
+        {"id": "ramp_count", "pattern": "count", "quantity": {"primitive": "count", "args": {"of": "ramp"}}, "op": ">=", "value": 2}
+      ],
+      "exceptions": [
+        {"id": "small_plot_1000", "effect": "unspecified",
+         "condition": {"quantity": {"primitive": "plot_area"}, "op": "<=", "value": 1000, "unit": "m2"},
+         "text": "Plots up to 1000 sq.m. - effect not stated in the summary sheet."},
+        {"id": "small_plot_2000", "effect": "unspecified",
+         "condition": {"quantity": {"primitive": "plot_area"}, "op": "<=", "value": 2000, "unit": "m2"},
+         "text": "Plots up to 2000 sq.m. - effect not stated in the summary sheet."}
+      ],
+      "requires_data": ["parking plans for all levels", "plot area"]
+    },
+    {
+      "id": "UDCPR-9.20.1",
+      "clause": "Reg. 9.20.1",
+      "title": "Natural lighting of habitable rooms and kitchens",
+      "status": "draft",
+      "applies_to": {"element": "room", "kind": ["bedroom", "living", "dining", "kitchen"]},
+      "checks": [
+        {"id": "opening_ratio", "pattern": "ratio",
+         "numerator": {"primitive": "opening_area", "args": {"to": ["exterior", "open_deck"]}},
+         "denominator": {"primitive": "area"}, "op": ">=", "value": 0.10},
+        {"id": "depth", "pattern": "max_distance",
+         "quantity": {"primitive": "max_distance_to_opening", "args": {"to": ["exterior", "open_deck"]}},
+         "op": "<=", "value": 7.5, "unit": "m"}
+      ],
+      "requires_data": ["unit or floor plan", "opening head and sill heights"],
+      "notes": ["Open question: does glazing onto a deck/utility count as an opening to open air?",
+                "Open question: is dining assessed as a separate habitable room inside an open plan?"]
+    },
+    {
+      "id": "UDCPR-9.20.2",
+      "clause": "Reg. 9.20.2 / Table 9-C",
+      "title": "Ventilation shaft size",
+      "status": "draft",
+      "applies_to": {"element": "ventilation_shaft"},
+      "checks": [
+        {"id": "shaft_size", "pattern": "lookup_threshold",
+         "key": {"primitive": "building_height"},
+         "table": {"name": "Table 9-C", "complete": false,
+                   "rows": [{"key_max": 10, "min": {"area": 1.2, "min_dim": 0.9}}]},
+         "quantities": {"area": {"primitive": "area"}, "min_dim": {"primitive": "min_dim"}}}
+      ],
+      "requires_data": ["floor plan with shafts", "building height", "full Table 9-C"]
+    },
+    {
+      "id": "UDCPR-6.9",
+      "clause": "Reg. 6.9",
+      "title": "Interior chowk",
+      "status": "draft",
+      "applies_to": {"element": "interior_chowk"},
+      "checks": [
+        {"id": "interior_dims", "pattern": "threshold", "quantity": {"primitive": "dims"}, "op": ">=", "value": [3.0, 3.0], "unit": "m"}
+      ],
+      "requires_data": ["typical floor plate", "abutting wall heights"],
+      "notes": ["The height-based area condition for interior chowks is not given in the summary sheet and is not encoded."]
+    },
+    {
+      "id": "UDCPR-6.9.1",
+      "clause": "Reg. 6.9 (exterior chowk)",
+      "title": "Exterior chowk",
+      "status": "draft",
+      "applies_to": {"element": "exterior_chowk"},
+      "checks": [
+        {"id": "exterior_dims_tall", "pattern": "threshold",
+         "when": {"quantity": {"primitive": "building_height"}, "op": ">", "value": 17, "unit": "m"},
+         "quantity": {"primitive": "dims"}, "op": ">=", "unit": "m",
+         "value": {"factor": 0.142857, "of": {"primitive": "building_height"}}}
+      ],
+      "requires_data": ["typical floor plate", "building height"],
+      "notes": ["Width/depth relationship below 17 m is not given in the summary sheet and is not encoded.",
+                "dims() returns two sides; a scaled value applies to both (H/7 x H/7)."]
+    },
+    {
+      "id": "UDCPR-9.27.1",
+      "clause": "Reg. 9.27.1",
+      "title": "Lifts required by building height",
+      "status": "draft",
+      "applies_to": {"element": "building"},
+      "checks": [
+        {"id": "lifts_over_15", "pattern": "count",
+         "when": {"quantity": {"primitive": "building_height"}, "op": ">", "value": 15, "unit": "m"},
+         "quantity": {"primitive": "count", "args": {"of": "lift"}}, "op": ">=", "value": 1},
+        {"id": "lifts_over_24", "pattern": "count",
+         "when": {"quantity": {"primitive": "building_height"}, "op": ">", "value": 24, "unit": "m"},
+         "quantity": {"primitive": "count", "args": {"of": "lift"}}, "op": ">=", "value": 2}
+      ],
+      "requires_data": ["section or elevation", "core plan"]
+    },
+    {
+      "id": "UDCPR-9.29.1",
+      "clause": "Reg. 9.29.1",
+      "title": "Exit doorway geometry and swing",
+      "status": "draft",
+      "applies_to": {"element": "exit_door"},
+      "checks": [
+        {"id": "door_width", "pattern": "threshold", "quantity": {"primitive": "door_width"}, "op": ">=", "value": 0.9, "unit": "m"},
+        {"id": "swing", "pattern": "relation", "subject": {"primitive": "swing_direction"}, "relation": "equals", "object": {"primitive": "exit_direction"}},
+        {"id": "landing_with_leaf_open", "pattern": "threshold", "quantity": {"primitive": "clear_width", "args": {"with_leaf_open": true}}, "op": ">=", "value": 0.9, "unit": "m"},
+        {"id": "landing_depth", "pattern": "threshold", "quantity": {"primitive": "landing_depth"}, "op": ">=", "unit": "m",
+         "value": {"factor": 1.0, "of": {"primitive": "door_width"}}}
+      ],
+      "requires_data": ["core / stair plan with exit doors and landings"]
+    },
+    {
+      "id": "UDCPR-9.29.3",
+      "clause": "Reg. 9.29.3",
+      "title": "Stair tread, riser and flight",
+      "status": "draft",
+      "applies_to": {"element": "stair_flight"},
+      "checks": [
+        {"id": "tread", "pattern": "threshold", "quantity": {"primitive": "tread"}, "op": ">=", "unit": "m",
+         "value": {"by": "occupancy", "values": {"residential": 0.25, "other": 0.30}}},
+        {"id": "riser", "pattern": "threshold", "quantity": {"primitive": "riser"}, "op": "<=", "unit": "m",
+         "value": {"by": "occupancy", "values": {"residential": 0.19, "other": 0.15}}},
+        {"id": "risers_per_flight", "pattern": "count", "quantity": {"primitive": "risers_in_flight"}, "op": "<=", "value": 15}
+      ],
+      "requires_data": ["stair plan", "stair section"]
+    },
+    {
+      "id": "UDCPR-6.7",
+      "clause": "Reg. 6.7",
+      "title": "Projections into marginal open spaces",
+      "status": "draft",
+      "applies_to": {"element": "projection", "kind": ["cornice", "chajja", "roof_projection", "weather_shade"]},
+      "checks": [
+        {"id": "projection_depth", "pattern": "threshold",
+         "quantity": {"primitive": "projection_depth", "args": {"beyond": "required_marginal_envelope"}},
+         "op": "<=", "value": 0.75, "unit": "m"}
+      ],
+      "requires_data": ["site plan with plot boundary, setbacks and projections"],
+      "notes": ["Separate conditions for canopies/porches are not given in the summary sheet and are not encoded."]
+    },
+    {
+      "id": "UDCPR-13.1.4",
+      "clause": "Reg. 13.1.4",
+      "title": "Barrier-free ramp",
+      "status": "draft",
+      "applies_to": {"element": "accessible_ramp"},
+      "checks": [
+        {"id": "width", "pattern": "threshold", "quantity": {"primitive": "clear_width"}, "op": ">=", "value": 1.8, "unit": "m"},
+        {"id": "slope", "pattern": "threshold", "quantity": {"primitive": "slope"}, "op": "<=", "value": 0.0833, "unit": "ratio"},
+        {"id": "run_length", "pattern": "threshold", "quantity": {"primitive": "length", "args": {"of": "run"}}, "op": "<=", "value": 9.0, "unit": "m"},
+        {"id": "handrail", "pattern": "threshold", "quantity": {"primitive": "handrail_height"}, "op": "==", "value": 0.8, "unit": "m"}
+      ],
+      "requires_data": ["entrance / site plan", "levels"],
+      "notes": ["Handrail extensions and gaps are not encoded."]
+    }
+  ]
+}
